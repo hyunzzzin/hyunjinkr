@@ -1,2 +1,1 @@
 console.log(3**2);
-shshsg
