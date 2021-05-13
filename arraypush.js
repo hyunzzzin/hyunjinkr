@@ -12,4 +12,3 @@ const array2 = ['사과','귤'];
 array2.push('바나나','딸기');
 console.log(array2);
 
-array(3);
