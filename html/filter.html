@@ -1,0 +1,38 @@
+<div class="button-wrapper">
+    <button class="button" data-age="20">20세 이상</button>
+    <button class="button" data-age="30">30세 이상</button>
+    <button class="button" data-age="40">40세 이상</button>
+</div>
+<ul clas="user_list">
+</ul>
+<script>
+    const userdatalist = [
+        {name : '곰', age : 18},
+        {name : '여우', age : 27},
+        {name : '사자', age : 32},
+        {name : '얼룩말', age : 41},
+        {name : '기린', age : 56}
+        ];
+        
+   document.querySelectorAll('.button').forEach((element)=> {
+       element.addEventListener('click',(event)=>{
+           onClickButton(event);
+       });
+   });
+   
+   function onClickButton(event) {
+       const button = event.target;
+       const targerAge = button.dataset.age;
+       const filterdList = userdatalist.filter((data) =>data.age >= targerAge);
+       updataList(filterdList);
+   }
+   
+   function updateList(filterdList){
+       let listHtml = '';
+       for (const data of filterdList) {
+           lstHtml += `<li>${data.name} : ${data.age}세</li>`;
+           
+       }
+       document.querySelector('.user_list').innerHTML = listHtml;
+   }
+</script>
